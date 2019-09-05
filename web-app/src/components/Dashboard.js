@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Display from './Display';
+import './Dashboard.css';
 
 const Dashboard = () => {
     let [ball, setBall] = useState(0);
@@ -7,35 +8,33 @@ const Dashboard = () => {
 
     return (
         <div className='dash-board'>
-            <Display ball={ball} strike={strike} />
-            <button className='btn' onClick={() => {
-                setBall(0);
-                setStrike(0);
-                console.log(`ball: ${ball}`);
-                console.log(`strike: ${strike}`);
-            }}>Hit</button>
-            <button className='btn' id='ball' onClick={() => {
-                if (ball < 4)
-                    setBall(++ball);
-                else
+            <div className='button-div'>
+                <button className='btn' onClick={() => {
                     setBall(0);
-                console.log(`strike: ${strike}`);
-            }}>Ball</button>
-            <button className='btn' onClick={() => {
-                if (strike < 3) {
-                    setStrike(++strike);
-                }
-                else {
                     setStrike(0);
-                    setBall(0);
-                }
-                console.log(`strike: ${strike}`);
-            }}>Strike</button>
-            <button className='btn' onClick={() => {
-                if (strike < 2)
-                    setStrike(++strike);
-                console.log(`strike: ${strike}`);
-            }}>Foul</button>
+                }}>Hit</button>
+                <button className='btn' id='ball' onClick={() => {
+                    if (ball < 4)
+                        setBall(++ball);
+                    else
+                        setBall(0);
+                }}>Ball</button>
+                <button className='btn' onClick={() => {
+                    if (strike < 2) {
+                        setStrike(++strike);
+                    }
+                    else {
+                        setStrike(0);
+                        setBall(0);
+                    }
+                }}>Strike</button>
+                <button className='btn' onClick={() => {
+                    if (strike < 2)
+                        setStrike(++strike);
+                }}>Foul</button>
+            </div>
+            <Display ball={ball} strike={strike} />
+            <img src='./baseball.png' alt='a baseball'/>
         </div>
     );
 };
