@@ -1,0 +1,11 @@
+.dash-board {
+    max-width: 1000px;
+    max-height: 1000px;
+}
+
+.btn {
+    width: 100px;
+    height: 50px;
+    background: green;
+    color: white;
+}
