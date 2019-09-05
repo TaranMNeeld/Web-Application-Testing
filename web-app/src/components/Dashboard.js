@@ -14,7 +14,7 @@ const Dashboard = () => {
                 console.log(`ball: ${ball}`);
                 console.log(`strike: ${strike}`);
             }}>Hit</button>
-            <button className='btn' name="ball" onClick={() => {
+            <button className='btn' id='ball' onClick={() => {
                 if (ball < 4)
                     setBall(++ball);
                 else
@@ -22,10 +22,13 @@ const Dashboard = () => {
                 console.log(`strike: ${strike}`);
             }}>Ball</button>
             <button className='btn' onClick={() => {
-                if (strike < 3)
+                if (strike < 3) {
                     setStrike(++strike);
-                else
+                }
+                else {
                     setStrike(0);
+                    setBall(0);
+                }
                 console.log(`strike: ${strike}`);
             }}>Strike</button>
             <button className='btn' onClick={() => {

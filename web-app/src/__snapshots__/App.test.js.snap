@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the dashboard component 1`] = `undefined`;
+
+exports[`renders the display component 1`] = `undefined`;

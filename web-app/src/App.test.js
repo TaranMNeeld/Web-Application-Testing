@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Dashboard from './components/Dashboard';
 import { render } from '@testing-library/react';
+import Dashboard from './components/Dashboard';
+import Display from './components/Display';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -10,14 +11,18 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-test('the sum function sums two integers', () => {
-  expect(sum(2, 2)).toBe(4);
-  expect(sum(2, 3)).toBe(5);
-});
+it('renders the dashboard component', () => {
+  const dashboard = render(<Dashboard />)
+  expect(dashboard.firstChild).toMatchSnapshot()
+ })
 
-test('contains home touchdown button', () => {
-  const { getByName } = render(<App />);
-  getByName('ball');
-});
+ it('renders the display component', () => {
+  const display = render(<Display />)
+  expect(display.firstChild).toMatchSnapshot()
+ })
 
-console.log(window);
+//  it('there are 4 buttons', () => {
+//    const buttons = window.querySelectorAll('button');
+//   expect(buttons.length).toBe(4)
+//  })
+ 
