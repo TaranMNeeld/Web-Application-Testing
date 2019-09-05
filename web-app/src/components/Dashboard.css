@@ -1,0 +1,32 @@
+.dash-board {
+    max-width: 600px;
+    max-height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    background: red;
+}
+
+.button-div {
+    max-width: 200px;
+}
+
+.btn {
+    width: 90px;
+    height: 90px;
+    margin: 5px;
+    background: green;
+    color: white;
+}
+
+.display {
+    min-width: 200px;
+    max-height: 190px;
+    margin: 5px;
+}
+
+img {
+    max-width: 180px;
+    max-height: 180px;
+    margin: 5px;
+}
